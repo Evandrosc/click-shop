@@ -1,4 +1,6 @@
-export function LimpaSvg() {
+import { ComponentProps } from 'react'
+
+export function LimpaSvg({ className }: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,7 +11,7 @@ export function LimpaSvg() {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="text-gray-800"
+      className={className}
     >
       <path d="M18 6 6 18" />
       <path d="m6 6 12 12" />

@@ -7,15 +7,21 @@ const config: Config = {
     './src/app/**/*.{ts,tsx}',
   ],
   theme: {
-    colors: {
-      white: '#ffffff',
-      blue: {
-        600: '#2A7AE4',
+    extend: {
+      colors: {
+        blue: {
+          600: '#2A7AE4',
+        },
+        gray: {
+          100: '#F5F5F5',
+          400: '#A2A2A2',
+          800: '#464646',
+        },
       },
-      gray: {
-        100: '#F5F5F5',
-        400: '#A2A2A2',
-        800: '#464646',
+      padding: {
+        mobile: '1.25rem',
+        tablet: '2rem',
+        desktop: '9.5rem',
       },
     },
   },
