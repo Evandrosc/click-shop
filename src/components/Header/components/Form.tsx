@@ -16,7 +16,7 @@ export function Form({ pesquisarAtivo }: FormProps) {
 
   return (
     <form
-      className={`${pesquisarAtivo ? 'flex' : 'hidden'} absolute left-1/2 top-14 h-10 w-[93%] -translate-x-1/2 rounded-[20px] bg-gray-100 px-4 sm:visible sm:static sm:flex sm:w-[272px] sm:translate-x-0 lg:w-[393px]`}
+      className={`${pesquisarAtivo ? 'flex' : 'hidden'} absolute left-1/2 top-14 z-20 h-10 w-[93%] -translate-x-1/2 rounded-[20px] bg-gray-100 px-4 sm:visible sm:static sm:flex sm:w-[17rem] sm:translate-x-0 md:z-0 lg:w-[24.5625rem]`}
     >
       <input
         ref={inputRef}

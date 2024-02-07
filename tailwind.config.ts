@@ -19,9 +19,14 @@ const config: Config = {
         },
       },
       padding: {
-        mobile: '1.25rem',
+        mobile: '1rem',
         tablet: '2rem',
         desktop: '9.5rem',
+      },
+      backgroundImage: {
+        'promocional-img': `url('/promocional/banner.webp')`,
+        'promocional-img-medio': `url('/promocional/bannerMedio.webp')`,
+        'promocional-img-pequeno': `url('/promocional/bannerPequeno.webp')`,
       },
     },
   },
