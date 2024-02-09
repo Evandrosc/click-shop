@@ -7,3 +7,9 @@
     display: none;
   }
 }
+
+@layer components {
+  .largura-maxima {
+    @apply px-4 md:px-8 max-w-[1168px] mx-auto
+  }
+}
