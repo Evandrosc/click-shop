@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { SetaDireita } from '../../../public/svg/SetaDireita'
 import { useWindowSize } from '@/hooks/useWindowSize'
+import { Skeleton } from '../ui/skeleton'
 
 function formatarMoedaBRL(numero: number): string {
   const formatadorDeMoeda = new Intl.NumberFormat('pt-BR', {
@@ -35,12 +36,36 @@ function quantidadesProdutos(tamanhoTela: number): number {
   return 6
 }
 
-export function Produtos() {
-  const produtosPorCategoria = useBuscaProdutos()
-  const { width } = useWindowSize()
+function CarregandoProdutos() {
+  const SkeletionContainer = (
+    <div>
+      <div className="flex items-center justify-between">
+        <Skeleton className="h-[20px] w-[100px] rounded-full" />
+        <Skeleton className="h-[20px] w-[100px] rounded-full" />
+      </div>
+      <Skeleton className="mt-4 h-[174px] w-full" />
+    </div>
+  )
 
   return (
-    <div className="largura-maxima mt-4 flex flex-col gap-8">
+    <div className="largura-maxima my-6 flex flex-col gap-8 md:my-10 lg:my-[4.5rem]">
+      {SkeletionContainer}
+      {SkeletionContainer}
+      {SkeletionContainer}
+    </div>
+  )
+}
+
+export function Produtos() {
+  const { produtosPorCategoria, isLoading } = useBuscaProdutos()
+  const { width } = useWindowSize()
+
+  if (isLoading) {
+    return <CarregandoProdutos />
+  }
+
+  return (
+    <div className="largura-maxima my-4 flex flex-col gap-8 md:my-8 lg:my-16">
       {produtosPorCategoria?.map((categoria) => (
         <section key={categoria.id}>
           <div className="mb-4 flex items-center justify-between">
@@ -55,7 +80,7 @@ export function Produtos() {
               <SetaDireita />
             </Link>
           </div>
-          <div className="mob:grid-cols-3 grid grid-cols-2 gap-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
+          <div className="grid grid-cols-2 gap-4 mob:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
             {categoria.produtos
               .slice(0, quantidadesProdutos(width))
               .map((produto) => (
