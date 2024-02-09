@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        mob: '400px',
+      },
       colors: {
         blue: {
           600: '#2A7AE4',
