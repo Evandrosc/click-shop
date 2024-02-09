@@ -10,7 +10,7 @@ export function Header() {
   const [pesquisarAtivo, setPesquisarAtivo] = useState(false)
 
   return (
-    <header className="relative my-4 flex items-center justify-between px-mobile sm:px-tablet lg:my-8 lg:px-desktop">
+    <header className="largura-maxima relative my-4 flex items-center justify-between lg:my-8">
       <div className="flex items-center gap-8">
         <Logo />
         <Form pesquisarAtivo={pesquisarAtivo} />
