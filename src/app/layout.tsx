@@ -5,7 +5,7 @@ import './globals.css'
 const raleway = Raleway({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Alura Geek',
+  title: 'Click Shop',
 }
 
 export default function RootLayout({
