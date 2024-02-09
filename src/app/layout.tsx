@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className={`${raleway.className} mx-auto max-w-[1592px]`}>
+      <body className={`${raleway.className} mx-auto max-w-[1440px]`}>
         {children}
       </body>
     </html>
