@@ -57,7 +57,7 @@ function CarregandoProdutos() {
 }
 
 export function Produtos() {
-  const { produtosPorCategoria, isLoading } = useBuscaProdutos()
+  const { data, isLoading } = useBuscaProdutos()
   const { width } = useWindowSize()
 
   if (isLoading) {
@@ -66,7 +66,7 @@ export function Produtos() {
 
   return (
     <div className="largura-maxima my-4 flex flex-col gap-8 md:my-8 lg:my-16">
-      {produtosPorCategoria?.map((categoria) => (
+      {data?.map((categoria) => (
         <section key={categoria.id}>
           <div className="mb-4 flex items-center justify-between">
             <h2 className="text-[1.375rem] font-bold text-gray-800">
