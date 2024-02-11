@@ -13,10 +13,12 @@ const config: Config = {
       },
       colors: {
         blue: {
+          50: '#EAF2FD',
           600: '#2A7AE4',
         },
         gray: {
           100: '#F5F5F5',
+          300: '#C8C8C8',
           400: '#A2A2A2',
           800: '#464646',
         },
