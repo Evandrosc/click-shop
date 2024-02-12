@@ -1,6 +1,6 @@
 'use client'
 
-import { useBuscaProdutos } from '@/hooks/useBuscaProdutos'
+import { useCategoriasComProdutos } from '@/hooks/useCategoriasComProdutos'
 import Image from 'next/image'
 import Link from 'next/link'
 import { SetaDireita } from '../../../public/svg/SetaDireita'
@@ -57,7 +57,8 @@ function CarregandoProdutos() {
 }
 
 export function Produtos() {
-  const { data, isLoading } = useBuscaProdutos()
+  const { data: produtosPorCategoria, isLoading } = useCategoriasComProdutos()
+
   const { width } = useWindowSize()
 
   if (isLoading) {
@@ -66,7 +67,7 @@ export function Produtos() {
 
   return (
     <div className="largura-maxima my-4 flex flex-col gap-8 md:my-8 lg:my-16">
-      {data?.map((categoria) => (
+      {produtosPorCategoria?.map((categoria) => (
         <section key={categoria.id}>
           <div className="mb-4 flex items-center justify-between">
             <h2 className="text-[1.375rem] font-bold text-gray-800">
