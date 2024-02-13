@@ -7,13 +7,13 @@ import { Footer } from '@/components/Footer/Footer'
 export default function Home() {
   return (
     <>
-      <ProvedorConsulta>
-        <Header />
-        <main>
-          <Promocional />
+      <Header />
+      <main>
+        <Promocional />
+        <ProvedorConsulta>
           <Produtos />
-        </main>
-      </ProvedorConsulta>
+        </ProvedorConsulta>
+      </main>
       <Footer />
     </>
   )
