@@ -85,29 +85,25 @@ export function Produtos() {
             {categoria.produtos
               .slice(0, quantidadesProdutos(width))
               .map((produto) => (
-                <div key={produto.id} className="flex flex-col gap-1">
-                  <Image
-                    src={produto.imagemUrl}
-                    width={176}
-                    height={174}
-                    quality={100}
-                    loading="lazy"
-                    alt=""
-                    className=""
-                  />
-                  <h3 className="text-sm font-medium text-gray-800">
-                    {produto.nome}
-                  </h3>
-                  <span className="font-bold text-gray-800">
-                    {formatarMoedaBRL(produto.preco)}
-                  </span>
-                  <Link
-                    href="/"
-                    className="text-sm font-bold text-blue-600 hover:underline"
-                  >
-                    Ver produto
-                  </Link>
-                </div>
+                <Link href="/" key={produto.id}>
+                  <div className="group flex flex-col gap-1">
+                    <Image
+                      src={produto.imagemUrl}
+                      width={176}
+                      height={174}
+                      quality={100}
+                      loading="lazy"
+                      alt=""
+                      className=""
+                    />
+                    <h3 className="text-sm font-medium text-gray-800 lg:group-hover:text-blue-600">
+                      {produto.nome}
+                    </h3>
+                    <span className="font-bold text-gray-800">
+                      {formatarMoedaBRL(produto.preco)}
+                    </span>
+                  </div>
+                </Link>
               ))}
           </div>
         </section>
