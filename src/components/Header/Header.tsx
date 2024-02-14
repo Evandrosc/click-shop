@@ -1,27 +1,17 @@
-'use client'
-
-import { useState } from 'react'
 import { Form } from './components/Form'
 import { Logo } from '@/components/Logo'
 import { Login } from './components/Login'
-import { BtnAtivaPesquisar } from './components/BtnAtivaPesquisar'
+import { Carrinho } from './components/Carrinho'
 
 export function Header() {
-  const [pesquisarAtivo, setPesquisarAtivo] = useState(false)
-
   return (
-    <header className="largura-maxima relative my-4 flex items-center justify-between lg:my-8">
-      <div className="flex items-center gap-8">
-        <Logo variante="primario" />
-        <Form pesquisarAtivo={pesquisarAtivo} />
+    <header className="largura-maxima relative my-4 flex flex-wrap items-center justify-between lg:my-8">
+      <Logo variante="primario" />
+      <div className="flex items-center gap-8 sm:order-3">
+        <Login />
+        <Carrinho />
       </div>
-
-      <Login />
-
-      <BtnAtivaPesquisar
-        pesquisarAtivo={pesquisarAtivo}
-        onPesquisar={setPesquisarAtivo}
-      />
+      <Form />
     </header>
   )
 }

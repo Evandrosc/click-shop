@@ -1,22 +1,20 @@
-import { useEffect, useRef } from 'react'
+'use client'
+
+import { FormEvent, useRef } from 'react'
 import { BuscaSvg } from '../../../../public/svg/BuscaSvg'
 
-type FormProps = {
-  pesquisarAtivo: boolean
-}
-
-export function Form({ pesquisarAtivo }: FormProps) {
+export function Form() {
   const inputRef = useRef<HTMLInputElement>(null)
 
-  useEffect(() => {
-    if (pesquisarAtivo) {
-      inputRef.current?.focus()
-    }
-  }, [pesquisarAtivo])
+  function enviaFormulario(e: FormEvent) {
+    e.preventDefault()
+    console.log(inputRef?.current?.value)
+  }
 
   return (
     <form
-      className={`${pesquisarAtivo ? 'flex' : 'hidden'} absolute left-1/2 top-14 z-20 h-10 w-[93%] -translate-x-1/2 rounded-[20px] bg-gray-100 px-4 sm:visible sm:static sm:flex sm:w-[17rem] sm:translate-x-0 md:z-0 lg:w-[24.5625rem]`}
+      onSubmit={enviaFormulario}
+      className="mt-3 flex h-10 w-full rounded-[20px] bg-gray-100 px-4 sm:order-2 sm:mt-0 sm:w-[17rem] lg:w-[24.5625rem]"
     >
       <input
         ref={inputRef}
