@@ -1,3 +1,17 @@
+import { Botao } from '@/components/Botao'
+import { InputHTMLAttributes } from 'react'
+
+type InputProps = InputHTMLAttributes<HTMLInputElement>
+
+function Input({ ...props }: InputProps) {
+  return (
+    <input
+      {...props}
+      className="w-full bg-white px-3 leading-10 outline-none placeholder:text-gray-400 lg:leading-[3.875rem]"
+    />
+  )
+}
+
 export default function Login() {
   return (
     <div className="bg-gray-100 pb-[4.75rem] pt-24">
@@ -5,26 +19,20 @@ export default function Login() {
         <h1 className="mb-4 text-center font-bold text-gray-800 lg:text-lg">
           Iniciar Sessão
         </h1>
-        <form action="" className="flex w-full flex-col items-center gap-4">
-          <input
+        <form className="flex w-full flex-col items-center gap-4">
+          <Input
             type="email"
             name="email"
-            autoFocus
             placeholder="Escreva seu email"
-            className="w-full bg-white px-3 leading-10 outline-none placeholder:text-gray-400 lg:leading-[3.875rem]"
+            autoFocus
           />
-          <input
-            type="password"
-            name="email"
-            placeholder="Escreva sua senha"
-            className="w-full bg-white px-3 leading-10 outline-none placeholder:text-gray-400 lg:leading-[3.875rem]"
-          />
-          <button
+          <Input type="password" name="senha" placeholder="Escreva sua senha" />
+          <Botao
             type="submit"
-            className="w-[6.8125rem] bg-blue-600 font-semibold leading-10 text-white lg:w-full lg:text-lg lg:leading-[3.875rem]"
+            className="w-[6.8125rem] leading-10 lg:w-full lg:text-lg lg:leading-[3.875rem]"
           >
             Entrar
-          </button>
+          </Botao>
         </form>
       </section>
     </div>

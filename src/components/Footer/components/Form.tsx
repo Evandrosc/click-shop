@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
+import { Botao } from '@/components/Botao'
 
 export function Form() {
   const inputNomeRef = useRef<HTMLInputElement>(null)
@@ -41,12 +42,9 @@ export function Form() {
         placeholder="Escreva sua mensagem"
       ></textarea>
 
-      <button
-        type="submit"
-        className="mb-4 border border-solid border-blue-600 bg-blue-600 px-4 py-3 text-sm font-semibold text-white duration-300 hover:bg-white hover:text-blue-600"
-      >
+      <Botao type="submit" className="mb-4 px-4 py-3 text-sm md:mb-0">
         Enviar mensagem
-      </button>
+      </Botao>
     </form>
   )
 }
