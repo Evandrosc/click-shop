@@ -1,17 +1,22 @@
-import { Form } from './components/Form'
-import { Logo } from '@/components/Logo'
-import { Login } from './components/Login'
-import { Carrinho } from './components/Carrinho'
+import { cn } from '@/lib/utils'
+import { ReactNode } from 'react'
 
-export function Header() {
+type HeaderProps = {
+  variante: 'primario' | 'secundario'
+  children: ReactNode
+}
+
+const variantes = {
+  primario: 'relative flex-wrap items-center justify-between',
+  secundario: 'justify-center',
+}
+
+export function Header({ variante, children }: HeaderProps) {
   return (
-    <header className="largura-maxima relative my-4 flex flex-wrap items-center justify-between lg:my-8">
-      <Logo variante="primario" />
-      <div className="flex items-center gap-8 sm:order-3">
-        <Login />
-        <Carrinho />
-      </div>
-      <Form />
+    <header
+      className={cn('largura-maxima my-4 flex lg:my-8', variantes[variante])}
+    >
+      {children}
     </header>
   )
 }
