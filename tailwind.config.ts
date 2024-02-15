@@ -1,5 +1,7 @@
 import type { Config } from 'tailwindcss'
 
+import plugin from 'tailwindcss/plugin'
+
 const config: Config = {
   content: [
     './src/pages/**/*.{ts,tsx}',
@@ -35,6 +37,23 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addComponents }) {
+      addComponents({
+        '.botao-azul': {
+          border: '2px solid #2A7AE4',
+          backgroundColor: '#2A7AE4',
+          fontWeight: '600',
+          color: '#fff',
+          transition: 'all 300ms',
+
+          '&:hover': {
+            backgroundColor: '#fff',
+            color: '#2A7AE4',
+          },
+        },
+      })
+    }),
+  ],
 }
 export default config

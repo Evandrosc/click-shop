@@ -13,7 +13,7 @@ export function Promocional() {
           </p>
           <Link
             href="/"
-            className="z-20 flex w-[7.4375rem] items-center justify-center border border-transparent bg-blue-600 text-sm font-semibold leading-10 text-white duration-300 hover:border-blue-600 hover:bg-white hover:text-blue-600 lg:w-[8.125rem] lg:text-base lg:font-normal lg:leading-[3.1875rem]"
+            className="botao-azul z-20 flex w-[7.4375rem] items-center justify-center text-sm leading-10 lg:w-[8.125rem] lg:text-base lg:font-normal lg:leading-[3.1875rem]"
           >
             Ver Consoles
           </Link>
