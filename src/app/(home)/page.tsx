@@ -1,6 +1,6 @@
 import { ProvedorConsulta } from '@/contexts/ProvedorConsulta'
 import { Produtos } from '@/components/Produtos/Produtos'
-import { Promocional } from '@/components/Promocional/Promocional'
+import { Promocional } from '@/components/Promocional'
 import { Header } from '@/components/Header/Header'
 import { Logo } from '@/components/Logo'
 import { ContainerLoginCarrinho } from '@/components/Header/components/ContainerLoginCarrinho'
