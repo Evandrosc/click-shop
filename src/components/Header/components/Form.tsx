@@ -4,11 +4,11 @@ import { FormEvent, useRef } from 'react'
 import { BuscaSvg } from '../../../../public/svg/BuscaSvg'
 
 export function Form() {
-  const inputRef = useRef<HTMLInputElement>(null)
+  const inputRef = useRef<HTMLInputElement | null>(null)
 
   function enviaFormulario(e: FormEvent) {
     e.preventDefault()
-    console.log(inputRef?.current?.value)
+    console.log(inputRef.current?.value)
   }
 
   return (

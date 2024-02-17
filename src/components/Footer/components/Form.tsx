@@ -4,14 +4,14 @@ import { useRef } from 'react'
 import { Botao } from '@/components/Botao'
 
 export function Form() {
-  const inputNomeRef = useRef<HTMLInputElement>(null)
-  const textareaMensagemRef = useRef<HTMLTextAreaElement>(null)
+  const inputNomeRef = useRef<HTMLInputElement | null>(null)
+  const textareaMensagemRef = useRef<HTMLTextAreaElement | null>(null)
 
   function enviaForm(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     console.log({
-      nome: inputNomeRef?.current?.value,
-      mensagem: textareaMensagemRef?.current?.value,
+      nome: inputNomeRef.current?.value,
+      mensagem: textareaMensagemRef.current?.value,
     })
   }
 
