@@ -6,19 +6,24 @@ import { z } from 'zod'
 
 import { Botao } from '@/components/Botao'
 
+const regexSemEspacos = /^\S+$/
+
 const formLoginSchema = z.object({
   email: z.string().email('Insira e-mail válido'),
-  senha: z.string().min(8, 'Pelo menos 8 caracteres'),
+  senha: z
+    .string()
+    .min(8, 'Pelo menos 8 caracteres')
+    .regex(regexSemEspacos, 'Remova os espaços'),
 })
 
-type TLoginSchema = z.infer<typeof formLoginSchema>
+type TFormLoginSchema = z.infer<typeof formLoginSchema>
 
 export function FormLogin() {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<TLoginSchema>({
+  } = useForm<TFormLoginSchema>({
     resolver: zodResolver(formLoginSchema),
     defaultValues: {
       email: '',
@@ -27,7 +32,7 @@ export function FormLogin() {
     mode: 'all',
   })
 
-  function enviaForm(dado: TLoginSchema) {
+  function enviaForm(dado: TFormLoginSchema) {
     console.log(dado)
   }
 
