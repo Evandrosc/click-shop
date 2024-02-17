@@ -41,7 +41,6 @@ export function FormLogin() {
           {...register('email')}
           type="email"
           placeholder="Escreva seu email"
-          autoFocus
           className="w-full bg-white px-3 leading-10 outline-none placeholder:text-gray-400 lg:leading-[3.875rem]"
         />
         {errors.email && (
