@@ -8,7 +8,7 @@ type LogoProps = {
 
 const variantesSvg = {
   primario: 'h-[1.125rem] w-6 lg:h-6 lg:w-7',
-  secundario: 'h-10 w-11 lg:h-6 lg:w-7',
+  secundario: 'h-10 w-11',
 }
 
 const variantesTexto = {
