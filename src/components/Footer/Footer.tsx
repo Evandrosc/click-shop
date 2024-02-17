@@ -1,5 +1,5 @@
 import { Logo } from '@/components/Logo'
-import { Form } from './components/Form'
+import { FormFaleConosco } from './components/FormFaleConosco'
 
 export function Footer() {
   return (
@@ -18,7 +18,7 @@ export function Footer() {
         </section>
         <section className="w-full md:[grid-area:form]">
           <h2 className="mb-2 font-bold text-gray-800">Fale conosco</h2>
-          <Form />
+          <FormFaleConosco />
         </section>
       </div>
       <p className="bg-white py-8 text-center font-medium">
