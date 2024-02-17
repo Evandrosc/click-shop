@@ -6,7 +6,7 @@ import { ReactNode } from 'react'
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 60000 * 5 /* 5 minutos  */,
+      staleTime: 60000 * 120 /* 5 minutos  */,
       refetchOnWindowFocus: false,
     },
   },
