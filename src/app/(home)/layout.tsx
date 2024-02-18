@@ -1,25 +1,20 @@
-import type { Metadata } from 'next'
-import { Raleway } from 'next/font/google'
+import { ReactNode } from 'react'
+import { Header } from '@/components/Header/Header'
+import { Logo } from '@/components/Logo'
+import { ContainerLoginCarrinho } from '@/components/Header/components/ContainerLoginCarrinho'
+import { Form } from '@/components/Header/components/Form'
 import { Footer } from '@/components/Footer/Footer'
-import '../globals.css'
 
-const raleway = Raleway({ subsets: ['latin'] })
-
-export const metadata: Metadata = {
-  title: 'Click Shop',
-}
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function HomeLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="pt-br">
-      <body className={`${raleway.className} mx-auto max-w-[1440px]`}>
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <>
+      <Header variante="primario">
+        <Logo variante="primario" />
+        <ContainerLoginCarrinho />
+        <Form />
+      </Header>
+      {children}
+      <Footer />
+    </>
   )
 }
