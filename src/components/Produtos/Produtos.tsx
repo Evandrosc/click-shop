@@ -1,20 +1,12 @@
 'use client'
 
-import { useCategoriasComProdutos } from '@/hooks/useCategoriasComProdutos'
-import Image from 'next/image'
+import { usePegaProdutos } from '@/hooks/usePegaProdutos'
 import Link from 'next/link'
 import { SetaDireita } from '../../../public/svg/SetaDireita'
 import { useWindowSize } from '@/hooks/useWindowSize'
 import { Skeleton } from '../ui/skeleton'
-
-function formatarMoedaBRL(numero: number): string {
-  const formatadorDeMoeda = new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL',
-  })
-
-  return formatadorDeMoeda.format(numero)
-}
+import { Produto } from '../Produto'
+import { TCategoriaProdutos } from '@/@types/TCategoriaProdutos'
 
 function quantidadesProdutos(tamanhoTela: number): number {
   if (tamanhoTela < 400) {
@@ -57,7 +49,8 @@ function CarregandoProdutos() {
 }
 
 export function Produtos() {
-  const { data: produtosPorCategoria, isLoading } = useCategoriasComProdutos()
+  const { data: produtosPorCategoria, isLoading } =
+    usePegaProdutos<TCategoriaProdutos[]>()
 
   const { width } = useWindowSize()
 
@@ -74,7 +67,7 @@ export function Produtos() {
               {categoria.nome}
             </h2>
             <Link
-              href="/"
+              href={categoria.nome.replace(' ', '')}
               className="flex items-center gap-2 text-sm font-bold text-blue-600 hover:underline"
             >
               Ver tudo
@@ -85,25 +78,7 @@ export function Produtos() {
             {categoria.produtos
               .slice(0, quantidadesProdutos(width))
               .map((produto) => (
-                <Link href="/" key={produto.id}>
-                  <div className="group flex flex-col gap-1">
-                    <Image
-                      src={produto.imagemUrl}
-                      width={176}
-                      height={174}
-                      quality={100}
-                      loading="lazy"
-                      alt=""
-                      className=""
-                    />
-                    <h3 className="text-sm font-medium text-gray-800 lg:group-hover:text-blue-600">
-                      {produto.nome}
-                    </h3>
-                    <span className="font-bold text-gray-800">
-                      {formatarMoedaBRL(produto.preco)}
-                    </span>
-                  </div>
-                </Link>
+                <Produto key={produto.id} produto={produto} />
               ))}
           </div>
         </section>
