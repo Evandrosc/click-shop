@@ -7,16 +7,3 @@
     display: none;
   }
 }
-
-@layer components {
-  .largura-maxima {
-    @apply px-4 max-w-[1168px] mx-auto md:px-8
-  }
-  
-  .grid-areas-footer {
-    grid-template-columns: 171px 1fr;
-    grid-template-areas:
-      "logo form"
-      "nav form";
-  }
-}

@@ -52,6 +52,25 @@ const config: Config = {
             color: '#2A7AE4',
           },
         },
+        '.largura-maxima': {
+          padding: '0 1rem',
+          maxWidth: '1168px',
+          margin: '0 auto',
+
+          '@media (min-width: 768px)': {
+            padding: '0 2rem',
+          },
+        },
+        '.grid-areas-footer': {
+          gridTemplateColumns: '171px 1fr',
+          maxWidth: '1168px',
+          gridTemplateAreas: '"logo form" "nav form"',
+
+          '@media (min-width: 1024px)': {
+            gridTemplateColumns: '176px 176px 1fr',
+            gridTemplateAreas: '"logo nav form" "logo nav form"',
+          },
+        },
       })
     }),
   ],
