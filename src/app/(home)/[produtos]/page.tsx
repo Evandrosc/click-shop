@@ -24,7 +24,7 @@ function CarregandoListaProdutos() {
 export default function Produtos() {
   const { produtos } = useParams<{ produtos: string }>()
 
-  const { data, isLoading } = usePegaProdutos<TProduto[]>(produtos)
+  const { data, isLoading } = usePegaProdutos<TProduto[]>({ produtos })
 
   if (isLoading) {
     return <CarregandoListaProdutos />

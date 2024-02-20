@@ -49,8 +49,9 @@ function CarregandoProdutos() {
 }
 
 export function Produtos() {
-  const { data: produtosPorCategoria, isLoading } =
-    usePegaProdutos<TCategoriaProdutos[]>()
+  const { data: produtosPorCategoria, isLoading } = usePegaProdutos<
+    TCategoriaProdutos[]
+  >({ categoriaProdutos: 'categoriaProdutos' })
 
   const { width } = useWindowSize()
 

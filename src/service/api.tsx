@@ -40,3 +40,7 @@ export async function pegaCategoriaComProdutos(): Promise<
 export async function pegaListaProdutos(categoria: string) {
   return await buscaDados(`${BASE_URL_LISTA_PRODUTOS_ENDPOINT}${categoria}`)
 }
+
+export async function pegaProduto(id: string) {
+  return await buscaDados<TProduto>(`http://localhost:3001/produtos?id=${id}`)
+}

@@ -17,7 +17,7 @@ type ProdutoProps = {
 
 export function Produto({ produto }: ProdutoProps) {
   return (
-    <Link href="/">
+    <Link href={`/${produto.categoria.replace(' ', '')}/${produto.id}`}>
       <div className="group flex flex-col gap-1">
         <Image
           src={produto.imagemUrl}
