@@ -4,7 +4,7 @@ import { FormFaleConosco } from './components/FormFaleConosco'
 export function Footer() {
   return (
     <footer className="bg-blue-50 pt-4">
-      <div className="md:grid-areas-footer largura-maxima grid grid-cols-1 place-items-center md:place-items-start md:gap-x-24 md:py-4 md:pb-8">
+      <div className="largura-maxima grid grid-cols-1 place-items-center md:grid-areas-footer md:place-items-start md:gap-x-24 md:py-4 md:pb-8">
         <div className="mb-4 md:mt-2">
           <Logo variante="secundario" />
         </div>
