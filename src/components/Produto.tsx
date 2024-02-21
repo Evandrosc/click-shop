@@ -1,15 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { TProduto } from '@/@types/TProduto'
-
-function formatarMoedaBRL(numero: number): string {
-  const formatadorDeMoeda = new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL',
-  })
-
-  return formatadorDeMoeda.format(numero)
-}
+import { formataMoedaBRL } from '@/lib/formataMoedaBRL'
 
 type ProdutoProps = {
   produto: TProduto
@@ -31,7 +23,7 @@ export function Produto({ produto }: ProdutoProps) {
           {produto.nome}
         </h3>
         <span className="font-bold text-gray-800">
-          {formatarMoedaBRL(produto.preco)}
+          {formataMoedaBRL(produto.preco)}
         </span>
       </div>
     </Link>
