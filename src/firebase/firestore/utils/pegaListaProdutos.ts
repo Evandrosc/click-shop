@@ -1,5 +1,5 @@
 import { collection, getDocs, limit, query, where } from 'firebase/firestore'
-import { db } from '../config'
+import { db } from '../configFirestore'
 import { TProduto } from '@/@types/TProduto'
 
 export async function pegaListaProdutos(categoria: string) {

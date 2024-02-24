@@ -8,7 +8,7 @@ import {
   DocumentData,
   orderBy,
 } from 'firebase/firestore'
-import { db } from '../config'
+import { db } from '../configFirestore'
 import { TCategoriaProdutos } from '@/@types/TCategoriaProdutos'
 import { TProduto } from '@/@types/TProduto'
 
