@@ -1,9 +1,9 @@
 export type TProduto = {
-  id: string
+  id: number
   nome: string
   imagemUrl: string
   preco: number
-  categoriaId: string
+  categoriaId: number
   categoria: string
   descricao: string
 }
