@@ -1,7 +1,7 @@
 import { TProduto } from './TProduto'
 
 export type TCategoriaProdutos = {
-  id: string
+  id: number
   nome: string
   produtos: TProduto[]
 }
