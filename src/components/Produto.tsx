@@ -19,7 +19,7 @@ export function Produto({ produto }: ProdutoProps) {
           loading="lazy"
           alt=""
         />
-        <h3 className="text-sm font-medium text-gray-800 lg:group-hover:text-blue-600">
+        <h3 className="mt-1 line-clamp-2 w-[97.5%] text-sm font-medium text-gray-800 lg:group-hover:text-blue-600">
           {produto.nome}
         </h3>
         <span className="font-bold text-gray-800">
