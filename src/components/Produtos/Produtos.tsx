@@ -51,8 +51,7 @@ function CarregandoProdutos() {
 export function Produtos() {
   const { data: produtosPorCategoria, isLoading } = usePegaProdutos<
     TCategoriaProdutos[]
-  >({ categoriaProdutos: 'categoriaProdutos' })
-
+  >({ categoriaComProdutos: true })
   const { width } = useWindowSize()
 
   if (isLoading) {
