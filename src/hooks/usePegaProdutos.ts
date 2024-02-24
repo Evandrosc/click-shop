@@ -1,36 +1,37 @@
-import { UseQueryResult, useQuery } from '@tanstack/react-query'
-import {
-  pegaCategoriaComProdutos,
-  pegaListaProdutos,
-  pegaProduto,
-} from '@/service/api'
+import { QueryFunction, UseQueryResult, useQuery } from '@tanstack/react-query'
 
+import { pegaCategoriasComProdutos } from '@/firebase/firestore/utils/pegaCategoriasComProdtuos'
+import { pegaListaProdutos } from '@/firebase/firestore/utils/pegaListaProdutos'
+import { pegaProduto } from '@/firebase/firestore/utils/pegaProduto'
 type UsePegaProdutosProps = {
-  categoriaProdutos?: 'categoriaProdutos'
+  categoriaComProdutos?: boolean
   produtos?: string
-  id?: string
+  id?: number
 }
 
-export function usePegaProdutos<T>({
-  categoriaProdutos,
+function buscaFuncao<T>({
+  categoriaComProdutos,
   produtos,
   id,
-}: UsePegaProdutosProps): UseQueryResult<T, Error> {
-  let funcao
-
-  // Determina qual função deve ser usada com base nos parâmetros
-  if (categoriaProdutos === 'categoriaProdutos') {
-    funcao = () => pegaCategoriaComProdutos() // Substitua pela função real
+}: UsePegaProdutosProps): QueryFunction<T> {
+  if (categoriaComProdutos) {
+    return () => pegaCategoriasComProdutos() as Promise<T>
   } else if (produtos) {
-    funcao = () => pegaListaProdutos(produtos) // Substitua pela função real
+    return () => pegaListaProdutos(produtos) as Promise<T>
   } else if (id) {
-    funcao = () => pegaProduto(id) // Substitua pela função real
+    return () => pegaProduto(id) as Promise<T>
   } else {
     throw new Error('Parâmetros inválidos para usePegaProdutos')
   }
+}
+
+export function usePegaProdutos<T>(
+  obj: UsePegaProdutosProps,
+): UseQueryResult<T, Error> {
+  const funcao = buscaFuncao<T>(obj)
 
   return useQuery({
-    queryKey: ['categoriaComProdutos', produtos, id],
+    queryKey: ['categoriaComProdutos', obj.produtos, obj.id],
     queryFn: funcao,
   })
 }
