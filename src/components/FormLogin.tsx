@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 
 import { Botao } from '@/components/Botao'
+import { loginUsuario } from '@/firebase/auth/utils/loginUsuario'
 
 const regexSemEspacos = /^\S+$/
 
@@ -32,8 +33,8 @@ export function FormLogin() {
     mode: 'all',
   })
 
-  function enviaForm(dado: TFormLoginSchema) {
-    console.log(dado)
+  function enviaForm({ email, senha }: TFormLoginSchema) {
+    loginUsuario(email, senha)
   }
 
   return (
