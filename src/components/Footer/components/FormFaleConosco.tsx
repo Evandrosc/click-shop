@@ -47,12 +47,13 @@ export function FormFaleConosco() {
           <input
             {...register('nome')}
             type="text"
-            className="peer block w-full rounded-md border-b-2 border-gray-300 px-2.5 pb-2.5 pt-5 text-sm text-gray-800 focus:border-blue-600 focus:outline-none focus:ring-0"
+            id="nome"
+            className="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-white px-2.5 pb-2.5 pt-5 text-gray-800 focus:border-blue-600 focus:outline-none focus:ring-0"
             placeholder=" "
           />
           <label
             htmlFor="nome"
-            className="absolute start-2.5 top-4 z-10 origin-[0] -translate-y-4 scale-75 transform text-sm text-gray-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4"
+            className="absolute start-2.5 top-4 z-10 origin-[0] -translate-y-4 scale-75 transform font-medium text-gray-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-blue-600 rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4"
           >
             Nome
           </label>
@@ -67,7 +68,7 @@ export function FormFaleConosco() {
         <textarea
           {...register('mensagem')}
           rows={4}
-          className="block w-full resize-none rounded-lg border-b-2 border-gray-300 p-2.5 text-sm text-gray-800 outline-none duration-300 placeholder:text-gray-400 focus:border-blue-600 focus:ring-blue-600"
+          className="block w-full resize-none rounded-lg border-b-2 border-gray-300 p-2.5 text-gray-800 outline-none duration-300 placeholder:font-medium placeholder:text-gray-400 focus:border-blue-600 focus:ring-blue-600"
           placeholder="Escreva sua mensagem"
         />
         {errors.mensagem && (
