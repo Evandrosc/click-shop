@@ -16,6 +16,7 @@ const config: Config = {
       colors: {
         blue: {
           50: '#EAF2FD',
+          300: '#5595E9',
           600: '#2A7AE4',
           700: '#2968c8',
         },
@@ -42,17 +43,25 @@ const config: Config = {
     plugin(function ({ addComponents }) {
       addComponents({
         '.botao-azul': {
-          border: '2px solid #2A7AE4',
+          border: '2px solid transparent',
           backgroundColor: '#2A7AE4',
-          fontWeight: '600',
           color: '#fff',
+          fontWeight: '600',
+          cursor: 'pointer',
           transition: 'all 300ms',
 
-          '&:hover': {
+          '&:disabled': {
+            backgroundColor: '#5595E9',
+            cursor: 'not-allowed',
+          },
+
+          '&:not(:disabled):hover': {
             backgroundColor: '#fff',
             color: '#2A7AE4',
+            borderColor: '#2A7AE4',
           },
         },
+
         '.largura-maxima': {
           padding: '0 1rem',
           maxWidth: '1168px',
