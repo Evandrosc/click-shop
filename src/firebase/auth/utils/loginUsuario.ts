@@ -1,12 +1,9 @@
+'use client'
+
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../configAuth'
 
-export function loginUsuario(email: string, senha: string) {
-  signInWithEmailAndPassword(auth, email, senha)
-    .then((userCredential) => {
-      console.log(userCredential.user)
-    })
-    .catch((erro) => {
-      console.error(erro)
-    })
+export async function loginUsuario(email: string, senha: string) {
+  const credencialUsuario = await signInWithEmailAndPassword(auth, email, senha)
+  return credencialUsuario
 }
