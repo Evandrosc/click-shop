@@ -1,0 +1,60 @@
+[debug] [2024-03-05T15:40:56.263Z] ----------------------------------------------------------------------
+[debug] [2024-03-05T15:40:56.270Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\evand\AppData\Local\pnpm\global\5\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2024-03-05T15:40:56.270Z] CLI Version:   13.3.1
+[debug] [2024-03-05T15:40:56.270Z] Platform:      win32
+[debug] [2024-03-05T15:40:56.270Z] Node Version:  v20.10.0
+[debug] [2024-03-05T15:40:56.271Z] Time:          Tue Mar 05 2024 12:40:56 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2024-03-05T15:40:56.271Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-03-05T15:40:56.276Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2024-03-05T15:40:56.413Z] Object "" in "firebase.json" has unknown property: {"additionalProperty":"ui"}
+[debug] [2024-03-05T15:40:56.420Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-05T15:40:56.420Z] > authorizing via signed-in user (evandromdsc@gmail.com)
+[debug] [2024-03-05T15:40:56.668Z] java version "21.0.2" 2024-01-16 LTS
+
+[debug] [2024-03-05T15:40:56.670Z] Java(TM) SE Runtime Environment (build 21.0.2+13-LTS-58)
+Java HotSpot(TM) 64-Bit Server VM (build 21.0.2+13-LTS-58, mixed mode, sharing)
+
+[debug] [2024-03-05T15:40:56.705Z] Parsed Java major version: 21
+[info] i  emulators: Starting emulators: auth, firestore {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth, firestore"}}
+[debug] [2024-03-05T15:40:56.728Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-05T15:40:56.729Z] assigned listening specs for emulators {"user":{"auth":[{"address":"10.0.0.181","family":"IPv4","port":9099}],"firestore":[{"address":"10.0.0.181","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"10.0.0.181","family":"IPv4","port":9150}],"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2024-03-05T15:40:56.753Z] [hub] writing locator at C:\Users\evand\AppData\Local\Temp\hub-click-shop-2a6c2.json
+[debug] [2024-03-05T15:40:56.769Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2024-03-05T15:40:56.769Z] Starting Firestore Emulator with command {"binary":"java","args":["-Dgoogle.cloud_firestore.debug_log_level=FINE","-Duser.language=en","-jar","C:\\Users\\evand\\.cache\\firebase\\emulators\\cloud-firestore-emulator-v1.19.1.jar","--host","10.0.0.181","--port",8080,"--websocket_port",9150,"--project_id","click-shop-2a6c2","--rules","C:\\Users\\evand\\OneDrive\\Área de Trabalho\\Projetos\\click-shop\\firestore.rules"],"optionalArgs":["port","webchannel_port","host","rules","websocket_port","functions_emulator","seed_from_export","project_id","single_project_mode"],"joinArgs":false} {"metadata":{"emulator":{"name":"firestore"},"message":"Starting Firestore Emulator with command {\"binary\":\"java\",\"args\":[\"-Dgoogle.cloud_firestore.debug_log_level=FINE\",\"-Duser.language=en\",\"-jar\",\"C:\\\\Users\\\\evand\\\\.cache\\\\firebase\\\\emulators\\\\cloud-firestore-emulator-v1.19.1.jar\",\"--host\",\"10.0.0.181\",\"--port\",8080,\"--websocket_port\",9150,\"--project_id\",\"click-shop-2a6c2\",\"--rules\",\"C:\\\\Users\\\\evand\\\\OneDrive\\\\Área de Trabalho\\\\Projetos\\\\click-shop\\\\firestore.rules\"],\"optionalArgs\":[\"port\",\"webchannel_port\",\"host\",\"rules\",\"websocket_port\",\"functions_emulator\",\"seed_from_export\",\"project_id\",\"single_project_mode\"],\"joinArgs\":false}"}}
+[info] i  firestore: Firestore Emulator logging to firestore-debug.log {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator logging to \u001b[1mfirestore-debug.log\u001b[22m"}}
+[debug] [2024-03-05T15:40:56.937Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2024-03-05T15:40:56.938Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[info] +  firestore: Firestore Emulator UI websocket is running on 9150. {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator UI websocket is running on 9150."}}
+[debug] [2024-03-05T15:41:11.016Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2024-03-05T15:41:11.017Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2024-03-05T15:41:11.017Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\evand\\.cache\\firebase\\emulators\\ui-v1.11.7\\server\\server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\evand\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.11.7\\\\server\\\\server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2024-03-05T15:41:11.176Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2024-03-05T15:41:11.177Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────────┬─────────────────┬─────────────────────────────────┐
+│ Emulator       │ Host:Port       │ View in Emulator UI             │
+├────────────────┼─────────────────┼─────────────────────────────────┤
+│ Authentication │ 10.0.0.181:9099 │ http://127.0.0.1:4000/auth      │
+├────────────────┼─────────────────┼─────────────────────────────────┤
+│ Firestore      │ 10.0.0.181:8080 │ http://127.0.0.1:4000/firestore │
+└────────────────┴─────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500, 9150
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[info] i  firestore: Change detected, updating rules... 
+[debug] [2024-03-05T16:51:55.829Z] >>> [apiv2][query] PUT http://10.0.0.181:8080/emulator/v1/projects/click-shop-2a6c2:securityRules [none]
+[debug] [2024-03-05T16:51:55.830Z] >>> [apiv2][body] PUT http://10.0.0.181:8080/emulator/v1/projects/click-shop-2a6c2:securityRules {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2';\n\nservice cloud.firestore {\n  match /databases/{database}/documents {\n\n    // This rule allows anyone with your Firestore database reference to view, edit,\n    // and delete all data in your Firestore database. It is useful for getting\n    // started, but it is configured to expire after 30 days because it\n    // leaves your app open to attackers. At that time, all client\n    // requests to your Firestore database will be denied.\n    //\n    // Make sure to write security rules for your app before that time, or else\n    // all client requests to your Firestore database will be denied until you Update\n    // your rules\n    match /{document=**} {\n      allow read, write: if true;\n    }\n  }\n}"}]}}
+[debug] [2024-03-05T16:51:56.410Z] <<< [apiv2][status] PUT http://10.0.0.181:8080/emulator/v1/projects/click-shop-2a6c2:securityRules 200
+[debug] [2024-03-05T16:51:56.410Z] <<< [apiv2][body] PUT http://10.0.0.181:8080/emulator/v1/projects/click-shop-2a6c2:securityRules {}
+[info] +  firestore: Rules updated. 
