@@ -5,4 +5,9 @@ import { firebaseConfig } from '../config'
 const app = initializeApp(firebaseConfig)
 
 export const auth = getAuth(app)
-connectAuthEmulator(auth, 'http://10.0.0.181:9099')
+
+if (!process.env.NEXT_PUBLIC_DATABASE_URL) {
+  throw new Error('não existe variável de ambiente NEXT_PUBLIC_DATABASE_URL')
+}
+
+connectAuthEmulator(auth, `http://${process.env.NEXT_PUBLIC_DATABASE_URL}:9099`)

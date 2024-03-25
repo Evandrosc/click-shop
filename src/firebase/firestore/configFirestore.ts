@@ -4,4 +4,9 @@ import { firebaseConfig } from '../config'
 
 const app = initializeApp(firebaseConfig)
 export const db = getFirestore(app)
-connectFirestoreEmulator(db, '10.0.0.181', 8080)
+
+if (!process.env.NEXT_PUBLIC_DATABASE_URL) {
+  throw new Error('não existe variável de ambiente NEXT_PUBLIC_DATABASE_URL')
+}
+
+connectFirestoreEmulator(db, process.env.NEXT_PUBLIC_DATABASE_URL, 8080)
