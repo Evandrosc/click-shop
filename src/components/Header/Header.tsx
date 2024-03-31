@@ -14,7 +14,10 @@ const variantes = {
 export function Header({ variante, children }: HeaderProps) {
   return (
     <header
-      className={cn('largura-maxima my-4 flex lg:my-8', variantes[variante])}
+      className={cn(
+        'largura-maxima my-4 flex h-[6rem] sm:h-11 lg:my-8',
+        variantes[variante],
+      )}
     >
       {children}
     </header>
