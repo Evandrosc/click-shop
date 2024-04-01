@@ -37,8 +37,7 @@ export function FormLogin() {
 
   async function enviaForm({ email, senha }: TFormLoginSchema) {
     try {
-      const usuario = await loginUsuario(email, senha)
-      console.log({ usuario })
+      await loginUsuario(email, senha)
       rota.push('/')
     } catch (_) {
       setError('root', { type: 'login', message: 'email ou senha inválidos' })

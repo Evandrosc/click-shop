@@ -1,6 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { useUsuarioLogado } from '@/hooks/useUsuarioLogado'
 import { FormLogin } from '@/components/FormPageLogin/FormLogin'
 import { FormCriaConta } from '@/components/FormPageLogin/FormCriaConta'
 
@@ -8,6 +10,19 @@ export default function Login() {
   const [loginOuCriaConta, setLoginOuCriaConta] = useState<
     'login' | 'criaConta'
   >('login')
+  const { inicializador, usuarioLogado } = useUsuarioLogado()
+  const rota = useRouter()
+
+  useEffect(() => {
+    if (usuarioLogado) {
+      rota.push('/')
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [usuarioLogado])
+
+  if (inicializador || usuarioLogado) {
+    return null
+  }
 
   return (
     <main className="bg-gray-100 pb-[4.75rem] pt-24">
